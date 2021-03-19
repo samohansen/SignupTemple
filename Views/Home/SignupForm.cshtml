@@ -9,10 +9,10 @@
     <p>Thanks for selecting a time! Please fill out the following information for your group!</p>
     
     <form asp-action="SignUpForm" method="post">
-        @*<div>
+        <div>
             <label>Time:</label>
-            <input value="@Model.Time" asp-for="Time" readonly/>
-        </div>*@
+            <input value="@Model.Time" asp-for="@Model.Time" readonly/>
+        </div>
 
         <div>
             <label asp-for="@Model.Group.GroupName">Group Name:</label>

@@ -6,7 +6,11 @@
     <br />
     @foreach (string s in Model)
     {
-        <p id="time">@s</p>
-        <a class="btn" asp-action="SignUpForm" method="post">Book Now</a>
+        <form asp-action="Signup" method="post">
+            <label>Time:</label>
+            <input id="time" name="time" value="@s" />
+            <br />
+            <button type="submit">Book Now!</button>
+        </form>
     }
 </div>

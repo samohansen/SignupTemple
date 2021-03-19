@@ -1,10 +1,24 @@
 ﻿@model IEnumerable<GroupInfo>
-
-<p>This is the Index.cshtml (home) page!!</p>
-
+<h3>About the Tour:</h3>
+<br />
 <p>
-    <b>Home Page:</b> This page will have a picture of the temple and the basic information
-    regarding the tour, along with the ability to click a button to “Sign Up” for a tour
+    Families or groups can come for a tour of the temple site Monday through Saturday.
+    We are already booking groups for the spring. We also allow family groups to come to the trailer
+    on Sunday afternoons for inside tours only.
 </p>
+<p>
+    We have obligations during the day and we do the tours in the evenings, so we're not able to answer the phone to set appointments.
+</p>
+<br />
 
-<img src="~/img/LTemple.jpg" />
+
+<h5><b>Please schedule a time below:</b></h5>
+<br />
+<a class="btn btn-dark" asp-area="" asp-controller="Home" asp-action="Signup">Click Here!</a>
+@*<button type="button" class="btn btn-dark" asp-area="" asp-controller="Home" asp-action="Signup">Click Here!</button>*@
+
+
+
+<div class="text-center">
+    <img src="~/img/LTemple.jpg" width="300" class="rounded" />
+</div>

@@ -1,1 +1,30 @@
-﻿@model string 
+﻿@{
+}
+@model IEnumerable<SignupTemple.Models.ViewModels.GroupListViewModel>
+
+    <form asp-action="SignUpForm" method="post">
+        <div>
+            <h2>Scheduled Appointments</h2>
+
+            <table id="Suggested">
+                <thead>
+                    <tr><th> Group Name </th><th> Group Size </th><th> Email </th><th> Phone Number </th><th> Time </th></tr>
+                </thead>
+
+                <tbody>
+                    @foreach (SignupTemple.Models.ViewModels.GroupListViewModel x in Model)
+                    {
+                        {
+                            <tr>
+                                <td>@x.Group.GroupName</td>
+                                <td>@x.Group.GroupSize</td>
+                                <td>@x.Group.Email</td>
+                                <td>@x.Group.Phone</td>
+                                <td>@x.Time</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </form>

@@ -23,7 +23,6 @@ namespace SignupTemple.Controllers
             return View();
         }
 
-
         [HttpGet]
         public IActionResult Signup()
         {
@@ -41,7 +40,7 @@ namespace SignupTemple.Controllers
             return View("SignupForm", new GroupListViewModel
             {
                 Time = time
-            });
+            }) ;
         }
         [HttpGet]
         public IActionResult SignupForm()
@@ -49,12 +48,6 @@ namespace SignupTemple.Controllers
             return View();
         }
 
-        // FIX THESE: (delete above?)
-
-        //public IActionResult EnterTask()
-        //{
-        //    return View();
-        //}
         [HttpPost]
         public IActionResult SignupForm(GroupInfo groupInfo)
         {
@@ -65,7 +58,13 @@ namespace SignupTemple.Controllers
                 _context.Groups.Add(groupInfo);
                 _context.SaveChanges();
             }
-            return View();
+            return View("ViewAppointments");
+        }
+
+        [HttpGet("Click to see scheduled appointments!")]
+        public IActionResult ViewAppointments()
+        {
+            return View("ViewAppointments");
         }
     }
 }
