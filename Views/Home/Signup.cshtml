@@ -1,0 +1,12 @@
+﻿@model IEnumerable<string>
+
+<div>
+    <h2>Please Choose an Appointment!</h2>
+    <br />
+    <br />
+    @foreach (string s in Model)
+    {
+        <p id="time">@s</p>
+        <a class="btn" asp-action="SignUpForm" method="post">Book Now</a>
+    }
+</div>

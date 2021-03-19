@@ -1,0 +1,40 @@
+﻿@{
+    //ViewBag to pass in Timeslot
+}
+
+@model SignupTemple.Models.ViewModels.GroupListViewModel
+
+
+<div class="text-center">
+    <p>Thanks for selecting a time! Please fill out the following information for your group!</p>
+    
+    <form asp-action="SignUpForm" method="post">
+        @*<div>
+            <label>Time:</label>
+            <input value="@Model.Time" asp-for="Time" readonly/>
+        </div>*@
+
+        <div>
+            <label asp-for="@Model.Group.GroupName">Group Name:</label>
+            <input asp-for="@Model.Group.GroupName" />
+        </div>
+
+        <div>
+            <label asp-for="@Model.Group.GroupSize">Group Size:</label>
+            <input asp-for="@Model.Group.GroupSize" />
+        </div>
+
+        <div>
+            <label asp-for="@Model.Group.Email">Email:</label>
+            <input asp-for="@Model.Group.Email" />
+        </div>
+
+        <div>
+            <label asp-for="@Model.Group.Phone">Phone Number:</label>
+            <input asp-for="@Model.Group.Phone" />
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    <div asp-validation-summary="All"></div>
+</div>
