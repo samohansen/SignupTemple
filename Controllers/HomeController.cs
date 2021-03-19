@@ -58,13 +58,13 @@ namespace SignupTemple.Controllers
                 _context.Groups.Add(groupInfo);
                 _context.SaveChanges();
             }
-            return View("ViewAppointments");
+            return View("Confirmation", groupInfo);
         }
 
         [HttpGet("Click to see scheduled appointments!")]
         public IActionResult ViewAppointments()
         {
-            return View("ViewAppointments");
+            return View(_context.Groups);
         }
     }
 }

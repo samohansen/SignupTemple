@@ -1,30 +1,40 @@
-﻿@{
-}
-@model IEnumerable<SignupTemple.Models.ViewModels.GroupListViewModel>
-
-    <form asp-action="SignUpForm" method="post">
-        <div>
-            <h2>Scheduled Appointments</h2>
-
-            <table id="Suggested">
-                <thead>
-                    <tr><th> Group Name </th><th> Group Size </th><th> Email </th><th> Phone Number </th><th> Time </th></tr>
-                </thead>
-
-                <tbody>
-                    @foreach (SignupTemple.Models.ViewModels.GroupListViewModel x in Model)
+﻿@model IEnumerable<SignupTemple.Models.GroupInfo>
+@*IEnumerable<SignupTemple.Models.ViewModels.GroupListViewModel>*@
+<form asp-action="SignUpForm" method="post">
+    <div>
+        <h2>Scheduled Appointments</h2>
+        <table id="Suggested">
+            <thead>
+                <tr><th> Group Name </th><th> Group Size </th><th> Email </th><th> Phone Number </th><th> Time </th></tr>
+            </thead>
+            <tbody>
+                @*@foreach (SignupTemple.Models.ViewModels.GroupListViewModel x in Model)*@
+                @foreach (SignupTemple.Models.GroupInfo x in Model)
+                {
                     {
-                        {
-                            <tr>
-                                <td>@x.Group.GroupName</td>
-                                <td>@x.Group.GroupSize</td>
-                                <td>@x.Group.Email</td>
-                                <td>@x.Group.Phone</td>
-                                <td>@x.Time</td>
-                            </tr>
-                        }
+                        <tr>
+                            <td>@x.GroupName</td>
+                            <td>@x.GroupSize</td>
+                            <td>@x.Email</td>
+                            <td>@x.Phone</td>
+                            <td>@x.TimeSlot</td>
+                        </tr>
                     }
-                </tbody>
-            </table>
-        </div>
-    </form>
+                }
+            </tbody>
+        </table>
+    </div>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
